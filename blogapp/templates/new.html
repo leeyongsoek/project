@@ -1,0 +1,16 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+    <ul>
+    {% for question in latest_question_list %}
+        <li>
+            <a href="/happy/{{ question.id }}/">{{ question.question_text }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No happy are available.</p>
+{% endif %}
+
+{% endblock %}
